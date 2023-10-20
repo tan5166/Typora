@@ -27,7 +27,6 @@ x = np.zeros([training_N,3],dtype=np.float64)
 y = np.zeros([training_N,1])
 
 err_LIN = np.zeros([experiments_N,1])
-# err_01 = np.zeros([experiments_N,1])
 err_01 = np.zeros([experiments_N,1],dtype=np.float64)
 
 err_check = np.zeros([experiments_N,1],dtype=np.float64)
@@ -42,3 +41,5 @@ for j in range(experiments_N):
   err_01[j] = np.sum(x @ w_LIN)
   for k in range(training_N):
     err_check[j] += np.dot(w_LIN.T,x[k])
+
+print(err_01 - err_check)
